@@ -10,7 +10,7 @@ services:
       POSTGRES_USER: ${CAVERA_DB_USERNAME}  # Nome de usuário
       POSTGRES_PASSWORD: ${CAVERA_DB_PASSWORD}  # Senha
     ports:
-      - "5454:5432"
+      - "8069:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
