@@ -14,21 +14,6 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
-  spring-app:
-    build:
-      context: .  # O Dockerfile está na mesma pasta que o docker-compose
-      dockerfile: Dockerfile
-    container_name: cavera-backend
-    restart: always
-    environment:
-      CAVERA_DB_URL: jdbc:postgresql://postgres:5432/${CAVERA_DB_NAME} # URL para acessar o banco no Docker
-      CAVERA_DB_USERNAME: ${CAVERA_DB_USERNAME}  # Variável de ambiente para o usuário do banco
-      CAVERA_DB_PASSWORD: ${CAVERA_DB_PASSWORD}  # Variável de ambiente para a senha do banco
-    ports:
-      - "8068:8068"
-    depends_on:
-      - postgres # Garante que o banco de dados será iniciado antes do backend
-
 volumes:
   postgres-data:
     driver: local
