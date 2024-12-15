@@ -9,7 +9,7 @@ WORKDIR /app
 COPY target/cavera-control-1.0.0.jar /app/cavera-control-1.0.0.jar
 
 # Exponha a porta que a aplicação usará (8068 conforme configurado)
-EXPOSE 8068
+EXPOSE 8069
 
 # Comando para rodar a aplicação
 ENTRYPOINT ["java", "-jar", "/app/cavera-control-1.0.0.jar"]

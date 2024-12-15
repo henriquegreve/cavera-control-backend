@@ -20,7 +20,7 @@ services:
       dockerfile: Dockerfile  # Caminho do Dockerfile relativo ao arquivo docker-compose
     container_name: cavera-backend
     ports:
-      - "8080:8080"
+      - "8069:8069"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-db:5432/${CAVERA_DB_NAME}  # Conexão com PostgreSQL usando variável de ambiente
       SPRING_DATASOURCE_USERNAME: ${CAVERA_DB_USERNAME}  # Nome de usuário usando variável de ambiente
