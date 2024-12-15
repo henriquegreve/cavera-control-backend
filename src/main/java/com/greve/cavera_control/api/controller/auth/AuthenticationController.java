@@ -36,11 +36,12 @@ public class AuthenticationController {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.getUsername(), data.getPassword());
         var auth = authenticationManager.authenticate(usernamePassword);
         var token = tokenService.generateToken((User) auth.getPrincipal());
-        return ResponseEntity.ok(new LoginResponseDTO(data.getUsername(), token));
+        var username = tokenService.validateToken(token);
+        return ResponseEntity.ok(new LoginResponseDTO(username, token));
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody @Valid UserDTO data) {
+    public ResponseEntity<UserDTO> register(@RequestBody @Valid UserDTO data) {
         if (userRepository.findByUsername(data.getUsername()) != null) throw new BusinessException("Username já está sendo utilizado.");
         if (userRepository.findByEmail(data.getEmail()).isPresent()) throw new BusinessException("Email já sendo utilizado.");
 
