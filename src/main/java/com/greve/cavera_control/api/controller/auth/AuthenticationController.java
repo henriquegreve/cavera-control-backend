@@ -19,7 +19,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import static com.greve.cavera_control.util.EntityConverter.*;
+import static com.greve.cavera_control.util.EntityConverter.convertToDTO;
+import static com.greve.cavera_control.util.EntityConverter.convertToEntity;
 
 @RestController
 @RequiredArgsConstructor

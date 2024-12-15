@@ -23,28 +23,28 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id_user")
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false, length = 200)
     private String name;
 
-    @Column(name = "username", nullable = false)
+    @Column(name = "username", nullable = false, length = 50)
     private String username;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", nullable = false, length = 200)
     private String email;
 
-    @Column(name = "password", nullable = false)
+    @Column(name = "password", nullable = false, length = 200)
     private String password;
 
-    @Column(name = "is_active", nullable = false)
+    @Column(name = "active", nullable = false)
     private Boolean isActive = true;
 
-    @Column(name = "is_approved", nullable = false)
+    @Column(name = "approved", nullable = false)
     private Boolean isApproved = false;
 
-    @Column
+    @Column(name = "role", nullable = false)
     private UserRoleEnum role;
 
     @Override
