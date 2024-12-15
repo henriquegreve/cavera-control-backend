@@ -14,14 +14,15 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
-app:
+  cavera-backend:
     build:
-      context: ./backend/cavera-control  # Diretório onde o Dockerfile está localizado
+      context: .  # Diretório onde o Dockerfile está localizado
+      dockerfile: Dockerfile  # Caminho do Dockerfile relativo ao arquivo docker-compose
     container_name: cavera-backend
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${CAVERA_DB_NAME}  # Conexão com PostgreSQL usando variável de ambiente
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-db:5432/${CAVERA_DB_NAME}  # Conexão com PostgreSQL usando variável de ambiente
       SPRING_DATASOURCE_USERNAME: ${CAVERA_DB_USERNAME}  # Nome de usuário usando variável de ambiente
       SPRING_DATASOURCE_PASSWORD: ${CAVERA_DB_PASSWORD}  # Senha usando variável de ambiente
     depends_on:
