@@ -10,9 +10,22 @@ services:
       POSTGRES_USER: ${CAVERA_DB_USERNAME}  # Nome de usuário
       POSTGRES_PASSWORD: ${CAVERA_DB_PASSWORD}  # Senha
     ports:
-      - "8069:5432"
+      - "5454:5432"
     volumes:
       - postgres-data:/var/lib/postgresql/data
+
+app:
+    build:
+      context: ./backend/cavera-control  # Diretório onde o Dockerfile está localizado
+    container_name: cavera-backend
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${CAVERA_DB_NAME}  # Conexão com PostgreSQL usando variável de ambiente
+      SPRING_DATASOURCE_USERNAME: ${CAVERA_DB_USERNAME}  # Nome de usuário usando variável de ambiente
+      SPRING_DATASOURCE_PASSWORD: ${CAVERA_DB_PASSWORD}  # Senha usando variável de ambiente
+    depends_on:
+      - postgres
 
 volumes:
   postgres-data:
