@@ -20,13 +20,15 @@ public class CaveraControlControllerAdvice {
 
     @ExceptionHandler(BadCredentialsException.class)
     public ResponseEntity<ErrorResponse> handleBadCredentialsException(BadCredentialsException ex, WebRequest request) {
-        ErrorResponse errorResponse = new ErrorResponse(request.getDescription(false), ex.getMessage());
+        ErrorResponse errorResponse = new ErrorResponse(request.getDescription(false), "Usuário ou senha inválidos.");
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGlobalException(Exception ex, WebRequest request) {
-        ErrorResponse errorResponse = new ErrorResponse(request.getDescription(false), "Internal Server Error");
+        ErrorResponse errorResponse = new ErrorResponse(request.getDescription(false),
+                "Um erro desconhecido ocorreu. Por favor contate o administrador do sistema."
+        );
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
