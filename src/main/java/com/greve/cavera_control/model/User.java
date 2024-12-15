@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-@Table(name = "gusers")
+@Table(name = "gusers", schema = "public")
 @Entity
 @Data
 @Builder
@@ -23,7 +23,7 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_user")
+    @Column(name = "iduser")
     private Long id;
 
     @Column(name = "name", nullable = false, length = 200)
