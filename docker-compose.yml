@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: postgres-db
+    restart: always
+    environment:
+      POSTGRES_DB: ${CAVERA_DB_NAME}  # Nome do banco de dados
+      POSTGRES_USER: ${CAVERA_DB_USERNAME}  # Nome de usuário
+      POSTGRES_PASSWORD: ${CAVERA_DB_PASSWORD}  # Senha
+    ports:
+      - "5454:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  cavera-backend:
+    build:
+      context: .  # Diretório onde o Dockerfile está localizado
+      dockerfile: Dockerfile  # Caminho do Dockerfile relativo ao arquivo docker-compose
+    container_name: cavera-backend
+    ports:
+      - "8069:8069"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-db:5432/${CAVERA_DB_NAME}  # Conexão com PostgreSQL usando variável de ambiente
+      SPRING_DATASOURCE_USERNAME: ${CAVERA_DB_USERNAME}  # Nome de usuário usando variável de ambiente
+      SPRING_DATASOURCE_PASSWORD: ${CAVERA_DB_PASSWORD}  # Senha usando variável de ambiente
+    depends_on:
+      - postgres
+
+volumes:
+  postgres-data:
+    driver: local
