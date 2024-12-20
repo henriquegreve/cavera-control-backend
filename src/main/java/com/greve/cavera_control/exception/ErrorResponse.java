@@ -1,4 +1,4 @@
-package com.greve.cavera_control.api.exception;
+package com.greve.cavera_control.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

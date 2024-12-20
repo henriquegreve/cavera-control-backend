@@ -1,6 +1,6 @@
-package com.greve.cavera_control.service.auth;
+package com.greve.cavera_control.auth.service.auth;
 
-import com.greve.cavera_control.repository.UserRepository;
+import com.greve.cavera_control.auth.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

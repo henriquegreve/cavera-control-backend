@@ -1,7 +1,7 @@
-package com.greve.cavera_control.service.implementation;
+package com.greve.cavera_control.auth.service.implementation;
 
-import com.greve.cavera_control.model.User;
-import com.greve.cavera_control.service.UserService;
+import com.greve.cavera_control.auth.model.User;
+import com.greve.cavera_control.auth.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;

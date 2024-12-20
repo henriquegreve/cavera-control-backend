@@ -1,6 +1,6 @@
-package com.greve.cavera_control.model;
+package com.greve.cavera_control.auth.model;
 
-import com.greve.cavera_control.model.enums.UserRoleEnum;
+import com.greve.cavera_control.auth.model.enums.UserRoleEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

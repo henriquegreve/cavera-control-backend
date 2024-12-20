@@ -1,6 +1,6 @@
-package com.greve.cavera_control.security.config;
+package com.greve.cavera_control.auth.config;
 
-import com.greve.cavera_control.repository.UserRepository;
+import com.greve.cavera_control.auth.repository.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

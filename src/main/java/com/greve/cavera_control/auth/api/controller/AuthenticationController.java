@@ -1,12 +1,12 @@
-package com.greve.cavera_control.api.controller.auth;
+package com.greve.cavera_control.auth.api.controller;
 
-import com.greve.cavera_control.api.dto.auth.AuthenticationDTO;
-import com.greve.cavera_control.api.dto.auth.LoginResponseDTO;
-import com.greve.cavera_control.api.dto.auth.UserDTO;
-import com.greve.cavera_control.exception.BusinessException;
-import com.greve.cavera_control.model.User;
-import com.greve.cavera_control.repository.UserRepository;
-import com.greve.cavera_control.security.config.TokenService;
+import com.greve.cavera_control.auth.api.dto.auth.AuthenticationDTO;
+import com.greve.cavera_control.auth.api.dto.auth.LoginResponseDTO;
+import com.greve.cavera_control.auth.api.dto.auth.UserDTO;
+import com.greve.cavera_control.auth.config.TokenService;
+import com.greve.cavera_control.auth.exception.BusinessException;
+import com.greve.cavera_control.auth.model.User;
+import com.greve.cavera_control.auth.repository.UserRepository;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.greve.cavera_control.security.config;
+package com.greve.cavera_control.auth.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;

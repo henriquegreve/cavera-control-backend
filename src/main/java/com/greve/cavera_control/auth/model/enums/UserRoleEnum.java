@@ -1,4 +1,4 @@
-package com.greve.cavera_control.model.enums;
+package com.greve.cavera_control.auth.model.enums;
 
 public enum UserRoleEnum {
 

@@ -1,4 +1,4 @@
-package com.greve.cavera_control.api.dto.auth;
+package com.greve.cavera_control.auth.api.dto.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthenticationDTO {
+public class LoginResponseDTO {
 
     private String username;
-    private String password;
+    private String token;
 
 }

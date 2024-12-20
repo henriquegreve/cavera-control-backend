@@ -1,6 +1,6 @@
-package com.greve.cavera_control.api.dto.auth;
+package com.greve.cavera_control.auth.api.dto.auth;
 
-import com.greve.cavera_control.model.enums.UserRoleEnum;
+import com.greve.cavera_control.auth.model.enums.UserRoleEnum;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
