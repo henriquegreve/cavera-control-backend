@@ -5,6 +5,8 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.greve.cavera_control.auth.model.User;
+import com.greve.cavera_control.auth.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +15,13 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
 @Service
+@RequiredArgsConstructor
 public class TokenService {
 
     @Value("${api.security.token.secret}")
     private String secret;
+
+    private final UserRepository userRepository;
 
     public String generateToken(User user){
         try{
@@ -44,7 +49,19 @@ public class TokenService {
         }
     }
 
+    public Long getUserFromToken(String token) {
+        try {
+            token = token.replace("Bearer ", "");
+
+            String username = validateToken(token);
+
+            return userRepository.findIdByEmailOrUsername(username);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to get user from token", e);
+        }
+    }
+
     private Instant genExpirationDate(){
-        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
+        return LocalDateTime.now().plusHours(24).toInstant(ZoneOffset.of("-03:00"));
     }
 }

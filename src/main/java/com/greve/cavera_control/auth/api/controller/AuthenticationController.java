@@ -4,7 +4,7 @@ import com.greve.cavera_control.auth.api.dto.auth.AuthenticationDTO;
 import com.greve.cavera_control.auth.api.dto.auth.LoginResponseDTO;
 import com.greve.cavera_control.auth.api.dto.auth.UserDTO;
 import com.greve.cavera_control.auth.config.TokenService;
-import com.greve.cavera_control.auth.exception.BusinessException;
+import com.greve.cavera_control.exception.BusinessException;
 import com.greve.cavera_control.auth.model.User;
 import com.greve.cavera_control.auth.repository.UserRepository;
 import jakarta.validation.Valid;

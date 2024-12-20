@@ -34,7 +34,7 @@ public class EntityConverter {
         return mapper.map(dto, entityClass);
     }
 
-    public static <T, D> List<T> converToEntity(List<D> dtos, Class<T> entityClass) {
+    public static <T, D> List<T> convertToEntity(List<D> dtos, Class<T> entityClass) {
         return dtos.stream() //
                 .map(dto -> mapper.map(dto, entityClass)) //
                 .toList();

@@ -1,7 +1,7 @@
 package com.greve.cavera_control.advice;
 
 import com.greve.cavera_control.exception.ErrorResponse;
-import com.greve.cavera_control.auth.exception.BusinessException;
+import com.greve.cavera_control.exception.BusinessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;

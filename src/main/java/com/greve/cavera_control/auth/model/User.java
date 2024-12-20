@@ -44,7 +44,7 @@ public class User implements UserDetails {
     @Column(name = "approved", nullable = false)
     private Boolean isApproved = false;
 
-    @Column(name = "role", nullable = false)
+    @Column(name = "iduserrole", nullable = false)
     private UserRoleEnum role;
 
     @Override

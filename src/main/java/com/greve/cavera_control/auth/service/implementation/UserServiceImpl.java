@@ -1,6 +1,7 @@
 package com.greve.cavera_control.auth.service.implementation;
 
 import com.greve.cavera_control.auth.model.User;
+import com.greve.cavera_control.auth.repository.UserRepository;
 import com.greve.cavera_control.auth.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -11,6 +12,8 @@ import java.util.Map;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
+
+    private final UserRepository repository;
 
     @Override
     public User save(User user) {
@@ -23,8 +26,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getByEmailOrUsername(String userInfo) {
-        return null;
+    public Long getByEmailOrUsername(String userInfo) {
+        return repository.findIdByEmailOrUsername(userInfo);
     }
 
     @Override
