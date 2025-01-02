@@ -1,7 +1,6 @@
 package com.greve.cavera_control.products.api.controller;
 
 import com.greve.cavera_control.auth.config.TokenService;
-import com.greve.cavera_control.auth.service.UserService;
 import com.greve.cavera_control.products.api.dto.ProductTypeDTO;
 import com.greve.cavera_control.products.model.ProductType;
 import com.greve.cavera_control.products.service.ProductTypeService;
@@ -25,7 +24,6 @@ public class ProductTypeController {
 
     private final ProductTypeService service;
     private final TokenService tokenService;
-    private final UserService userService;
 
     @PostMapping
     public ResponseEntity<ProductTypeDTO> createPt(@RequestBody @Valid ProductTypeDTO dto, @RequestHeader("Authorization") String token) {
