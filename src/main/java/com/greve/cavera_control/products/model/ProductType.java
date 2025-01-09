@@ -47,6 +47,9 @@ public class ProductType {
     @Column(name = "name", nullable = false, length = 50)
     private String name;
 
+    @Column(name = "description", length = 255)
+    private String description;
+
     @Column(name = "createiduser")
     private Long createUserId;
 
