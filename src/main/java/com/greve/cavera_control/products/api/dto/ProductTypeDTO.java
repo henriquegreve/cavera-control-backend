@@ -14,6 +14,8 @@ import java.time.LocalDateTime;
 public class ProductTypeDTO {
 
     private Long id;
+    private Long idCompany;
+    private Long idBranch;
     private Integer ordenation;
     private String name;
     private Long createUserId;

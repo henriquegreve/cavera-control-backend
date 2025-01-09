@@ -1,5 +1,7 @@
 package com.greve.cavera_control.products.model;
 
+import com.greve.cavera_control.companies.model.Company;
+import com.greve.cavera_control.companies.model.CompanyBranch;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,6 +23,24 @@ public class ProductType {
     @Column(name = "idproducttype")
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(
+            name = "idcompany",
+            referencedColumnName = "idcompany",
+            foreignKey = @ForeignKey(name = "vproducttypes_idcompany_fk"),
+            nullable = false
+    )
+    private Company company;
+
+    @ManyToOne
+    @JoinColumn(
+            name = "idbranch",
+            referencedColumnName = "idbranch",
+            foreignKey = @ForeignKey(name = "vproducttypes_idbranch_fk"),
+            nullable = false
+    )
+    private CompanyBranch branch;
+
     @Column(name = "ordenation")
     private Integer ordenation;
 
@@ -38,5 +58,4 @@ public class ProductType {
 
     @Column(name = "modifydate", nullable = false)
     private LocalDateTime modifyDate;
-
 }

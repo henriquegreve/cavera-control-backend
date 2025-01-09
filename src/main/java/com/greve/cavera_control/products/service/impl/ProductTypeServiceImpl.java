@@ -6,6 +6,8 @@ import com.greve.cavera_control.products.model.ProductType;
 import com.greve.cavera_control.products.repository.ProductTypeRepository;
 import com.greve.cavera_control.products.service.ProductTypeService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -58,8 +60,8 @@ public class ProductTypeServiceImpl implements ProductTypeService {
     }
 
     @Override
-    public List<ProductType> getAll() {
-        return repository.findAll();
+    public Page<ProductType> getAll(Pageable pageable) {
+        return repository.findAll(pageable);
     }
 
     @Override
