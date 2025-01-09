@@ -1,6 +1,8 @@
 package com.greve.cavera_control.products.service;
 
 import com.greve.cavera_control.products.model.ProductType;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -12,7 +14,7 @@ public interface ProductTypeService {
 
     ProductType getById(final Long id);
 
-    List<ProductType> getAll();
+    Page<ProductType> getAll(Pageable pageable);
 
     ProductType update(final Long id, final Long userId, ProductType pt);
 
