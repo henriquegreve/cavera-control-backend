@@ -26,7 +26,7 @@ public class CompanyBranchDTO {
     private Boolean active;
     @NotEmpty
     private String companyRegister;
-    private String statRegistration;
+    private String stateRegistration;
     private String cityRegistration;
     @NotEmpty
     private String email;
