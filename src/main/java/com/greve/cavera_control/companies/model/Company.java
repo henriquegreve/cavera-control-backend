@@ -58,29 +58,29 @@ public class Company {
     @Column(name = "phone02number", length = 20)
     private String phone02Number;
 
-    @Column(name = "adressstreet", length = 200)
-    private String adressStreet;
+    @Column(name = "addressstreet", length = 200)
+    private String addressStreet;
 
-    @Column(name = "adressnumber", length = 25)
-    private String adressNumber;
+    @Column(name = "addressnumber", length = 25)
+    private String addressNumber;
 
-    @Column(name = "adresscomplement", length = 50)
-    private String adressComplement;
+    @Column(name = "addresscomplement", length = 50)
+    private String addressComplement;
 
-    @Column(name = "adressneighborhood", length = 150)
-    private String adressNeighborhood;
+    @Column(name = "addressneighborhood", length = 150)
+    private String addressNeighborhood;
 
-    @Column(name = "adresscity", length = 150)
-    private String adressCity;
+    @Column(name = "addresscity", length = 150)
+    private String addressCity;
 
-    @Column(name = "adressstate", length = 150)
-    private String adressState;
+    @Column(name = "addressstate", length = 150)
+    private String addressState;
 
-    @Column(name = "adresscountry", length = 150)
-    private String adressCountry;
+    @Column(name = "addresscountry", length = 150)
+    private String addressCountry;
 
-    @Column(name = "adresspostalcode", length = 25)
-    private String adressPostalCode;
+    @Column(name = "addresspostalcode", length = 25)
+    private String addressPostalCode;
 
     @ManyToOne
     @JoinColumn(name = "idimage", referencedColumnName = "idimage", foreignKey = @ForeignKey(name = "gcompanies_idimage_fk"))
