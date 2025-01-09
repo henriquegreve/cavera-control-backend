@@ -38,8 +38,8 @@ public class CompanyBranch {
     @Column(name = "companyregister", nullable = false, length = 50)
     private String companyRegister;
 
-    @Column(name = "statregistration", length = 50)
-    private String statRegistration;
+    @Column(name = "stateregistration", length = 50)
+    private String stateRegistration;
 
     @Column(name = "cityregistration", length = 50)
     private String cityRegistration;

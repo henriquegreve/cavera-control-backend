@@ -72,7 +72,7 @@ public class CompanyBranchServiceImpl implements CompanyBranchService {
         cb.setAddressState(data.getAddressState());
         cb.setAddressPostalCode(data.getAddressPostalCode());
         cb.setCityRegistration(data.getCityRegistration());
-        cb.setStatRegistration(data.getStatRegistration());
+        cb.setStateRegistration(data.getStateRegistration());
         cb.setEmail(data.getEmail());
         cb.setContact(data.getContact());
         cb.setPhone01Prefix(data.getPhone01Prefix());
